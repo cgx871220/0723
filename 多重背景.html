@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href='https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100;300;400;500;700;900&display=swap'
+        rel='stylesheet'>
+
+    <style>
+        html,
+        body {
+            height: 400vh;
+            background: linear-gradient(20deg,#3d5493,#1aa2a0) fixed center center/100% 100%;
+        }
+
+        * {
+
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+            font-family: 'Noto Sans TC', sans-serif;
+            font-weight: 700;
+        }
+
+        .box1 {
+            width: 100%;
+            height: 100vh;
+            background: linear-gradient(40deg, red 50%, transparent 50%), url("https://picsum.photos/id/684/1200/600") center center /100% 100%;
+            ;
+        }
+
+        .container1 {
+            height: 100%;
+            padding: 40px;
+        }
+
+        .txt1 {
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+
+            align-items: start;
+        }
+
+        .h11 {
+            font-size: 123px;
+            border-bottom: 1px solid #000;
+        }
+
+        .p1 {
+            width: 50%;
+            font-size: 48px;
+        }
+
+
+
+
+        .box2 {
+            width: 100%;
+            margin-top: 50px  ;
+            display: flex;
+        }
+
+        .wrap2 {
+            width: 25%;
+            margin: 0 30px;
+            position: relative;
+        }
+        .img2{
+            width: 100%;
+            height: 100%;
+        }
+        .img2>img {
+            width: 100%;
+            vertical-align: middle;
+        }
+
+        .txt2 {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, .6);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 10px 30px;
+            opacity: 0;
+            line-height: 1.5;
+            transition: all .5s;
+        }
+
+        .txt2:hover {
+            opacity: 1;
+        }
+
+        .txt2>.h22 {
+            font-size: 52px;
+            color: yellow;
+            width: 100%;
+            text-align: center;
+        }
+
+        .txt2>p {
+            color: #fff;
+            font-style: 18px;
+        }
+
+        .h22::after {
+            content: "";
+            display: block;
+            width: 0%;
+            height: 2px;
+            background-color: yellow;
+            margin: 10px 0;
+            transition: all .5s;
+        }
+
+        .txt2:hover h2::after {
+            width: 100%;
+        }
+
+
+
+
+
+
+
+        .box3{
+            display: flex;
+            margin-top: 50px;
+        }
+        .item3{
+            width: 30%;
+            background-color: #fff;
+            margin: 0 30px;
+            transition: transform .5s;
+            border-radius: 50px;
+        }
+        .item3 img{
+            width: 100%;
+            vertical-align: middle;
+        }
+        .txt3{
+            padding: 20px;
+            position: relative;
+            transition: color .3s ;
+            border-radius: 0 0 50px 50px;
+        }
+        .txt3>.h23{
+            text-align: center;
+            font-weight: 900;
+            font-size: 48px;
+            border-bottom:1px solid #666 ;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+        }
+        .txt3>p{
+            font-weight: 300;
+            font-size: 16px;
+           
+        
+        }
+        .txt3::before{
+            content: '';
+            position: absolute;
+            width: 0;height: 0;
+            border-top:80px solid transparent ;
+            border-left: 286px solid #fff;
+            border-right: 286px solid #fff;
+            transform: translateY(-125%) translateX(-20px);
+          
+        }
+        .item3:hover{
+            transform: translateY(-30px);
+        }
+
+        .item3:hover>.txt3{
+            background:rgb(206, 206, 60);
+            color:#999;
+        }
+        .item3:hover>.txt3::before{
+            border-left: 286px solid rgb(206, 206, 60);
+            border-right:285px solid rgb(206, 206, 60);;
+        }
+
+
+        .item4{
+            margin: 100px 0;
+            display: flex;
+            align-items: center;
+            padding: 0 50px;
+        }
+        .pic4{
+            width: 55%;
+            flex-shrink:0;
+        }
+        .txt4{
+            width: 55%;
+            flex-shrink:0;
+        }
+        .pic4>img{
+            width: 100%;
+            vertical-align: middle;
+        }
+        .item4>*{
+            margin-right: -200px;
+        }
+        .item4:nth-child(even) :nth-child(2){
+            z-index: 1;
+            order: -1;
+        }
+        .item4>.txt4{
+            background-color: rgba(11, 223, 234, 0.8);
+            padding: 20px;
+        }
+        .txt4>h3{
+            font-size: 48px;
+            font-weight: 800;
+            text-align: center;
+            padding: 10px;
+        }
+        .txt4>p{
+            line-height: 1.2;
+            font-size: 22px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box1">
+        <div class="container1">
+            <div class="txt1">
+                <h1 class="h11">
+                    title
+                </h1>
+                <p class="p1">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus optio suscipit nam eius
+                    voluptates repellat hic eligendi magnam sapiente aperiam, obcaecati consectetur velit dolore
+                    perferendis labore est atque molestiae cum?
+                </p>
+            </div>
+        </div>
+    </div>
+    <div class="box2">
+        <div class="wrap2">
+            <div class="img2">
+                <img src="https://picsum.photos/id/555/600/400" alt="">
+            </div>
+            <div class="txt2">
+                <h2 class="h22">
+                    title
+                </h2>
+                <p class="p2">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas expedita debitis, exercitationem
+                    eveniet sunt voluptate ipsam. Facilis veritatis commodi vel aspernatur quidem, fugiat esse sequi
+                    mollitia est possimus? Quis, aperiam.
+                </p>
+            </div>
+        </div>
+        <div class="wrap2">
+            <div class="img2">
+                <img src="https://picsum.photos/id/556/600/400" alt="">
+            </div>
+            <div class="txt2">
+                <h2 class="h22">
+                    title
+                </h2>
+                <p class="p2">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas expedita debitis, exercitationem
+                    eveniet sunt voluptate ipsam. Facilis veritatis commodi vel aspernatur quidem, fugiat esse sequi
+                    mollitia est possimus? Quis, aperiam.
+                </p>
+            </div>
+        </div>
+        <div class="wrap2">
+            <div class="img2">
+                <img src="https://picsum.photos/id/557/600/400" alt="">
+            </div>
+            <div class="txt2">
+                <h2 class="h22">
+                    title
+                </h2>
+                <p class="p2">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas expedita debitis, exercitationem
+                    eveniet sunt voluptate ipsam. Facilis veritatis commodi vel aspernatur quidem, fugiat esse sequi
+                    mollitia est possimus? Quis, aperiam.
+                </p>
+            </div>
+        </div>
+        <div class="wrap2">
+            <div class="img2">
+                <img src="https://picsum.photos/id/558/600/400" alt="">
+            </div>
+            <div class="txt2">
+                <h2 class="h22">
+                    title
+                </h2>
+                <p class="p2">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas expedita debitis, exercitationem
+                    eveniet sunt voluptate ipsam. Facilis veritatis commodi vel aspernatur quidem, fugiat esse sequi
+                    mollitia est possimus? Quis, aperiam.
+                </p>
+            </div>
+        </div>
+    </div>
+    <div class="box3">
+        <div class="item3">
+            <div class="pic3">
+                <img src="https://picsum.photos/id/444/600/400" alt="">
+            </div>
+            <div class="txt3">
+                <h2 class="h23">name</h2>
+                <p class="p3">Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel unde voluptates quibusdam laborum eaque consectetur exercitationem deleniti fugit, necessitatibus, ipsam ab. Similique dolorum rerum dolor explicabo facere pariatur atque expedita.</p>
+            </div>
+        </div><div class="item3">
+            <div class="pic3">
+                <img src="https://picsum.photos/id/445/600/400" alt="">
+            </div>
+            <div class="txt3">
+                <h2 class="h23">name</h2>
+                <p class="p3">Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel unde voluptates quibusdam laborum eaque consectetur exercitationem deleniti fugit, necessitatibus, ipsam ab. Similique dolorum rerum dolor explicabo facere pariatur atque expedita.</p>
+            </div>
+        </div><div class="item3">
+            <div class="pic3">
+                <img src="https://picsum.photos/id/446/600/400" alt="">
+            </div>
+            <div class="txt3">
+                <h2 class="h23">name</h2>
+                <p class="p3">Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel unde voluptates quibusdam laborum eaque consectetur exercitationem deleniti fugit, necessitatibus, ipsam ab. Similique dolorum rerum dolor explicabo facere pariatur atque expedita.</p>
+            </div>
+        </div>
+    </div>
+    <div class="box4">
+        <div class="item4">
+            <div class="pic4">
+                <img src="https://picsum.photos/id/777/900/600" alt="">
+            </div>
+            <div class="txt4">
+                <h3 class="h34">titletitle</h3>
+                <p class="p4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis aut suscipit distinctio numquam commodi et placeat nam perspiciatis. A pariatur, distinctio nostrum magni suscipit consequatur minima amet unde mollitia libero?</p>
+            </div>
+        </div> <div class="item4">
+            <div class="pic4">
+                <img src="https://picsum.photos/id/776/900/600" alt="">
+            </div>
+            <div class="txt4">
+                <h3 class="h34">titletitle</h3>
+                <p class="p4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis aut suscipit distinctio numquam commodi et placeat nam perspiciatis. A pariatur, distinctio nostrum magni suscipit consequatur minima amet unde mollitia libero?</p>
+            </div>
+        </div> <div class="item4">
+            <div class="pic4">
+                <img src="https://picsum.photos/id/778/900/600" alt="">
+            </div>
+            <div class="txt4">
+                <h3 class="h34">titletitle</h3>
+                <p class="p4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis aut suscipit distinctio numquam commodi et placeat nam perspiciatis. A pariatur, distinctio nostrum magni suscipit consequatur minima amet unde mollitia libero?</p>
+            </div>
+        </div> <div class="item4">
+            <div class="pic4">
+                <img src="https://picsum.photos/id/779/900/600" alt="">
+            </div>
+            <div class="txt4">
+                <h3 class="h34">titletitle</h3>
+                <p class="p4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis aut suscipit distinctio numquam commodi et placeat nam perspiciatis. A pariatur, distinctio nostrum magni suscipit consequatur minima amet unde mollitia libero?</p>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
